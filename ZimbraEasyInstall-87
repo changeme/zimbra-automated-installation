@@ -8,7 +8,7 @@ TIMEZONE=$(timedatectl|egrep 'Time zone:'| awk {'print $3'})
 
 #Install a DNS Server
 if [ "$4" == "bind" ]; then
-    sudo apt-get update && sudo sudo apt-get install -y bind9 bind9utils bind9-doc
+    sudo apt-get update && sudo apt-get install -y bind9 bind9utils bind9-doc
     echo "Installing Bind DNS Server"
     sed "s/-u/-4 -u/g" /etc/default/bind9 > /etc/default/bind9.new
     mv /etc/default/bind9.new /etc/default/bind9
@@ -60,7 +60,7 @@ EOF
 fi
 if [ "$4" == "dnsmasq" ]; then
     echo "Installing dnsmasq DNS Server"
-    sudo apt-get update && sudo sudo apt-get install -y dnsmasq
+    sudo apt-get update && sudo apt-get install -y dnsmasq
     echo "Configuring DNS Server"
     mv /etc/dnsmasq.conf /etc/dnsmasq.conf.old
 cat <<EOF >>/etc/dnsmasq.conf
@@ -73,7 +73,7 @@ EOF
     sudo service dnsmasq restart
 else
     echo "Installing dnsmasq DNS Server"
-    sudo apt-get update && sudo sudo apt-get install -y dnsmasq
+    sudo apt-get update && sudo apt-get install -y dnsmasq
     echo "Configuring DNS Server"
     mv /etc/dnsmasq.conf /etc/dnsmasq.conf.old
 cat <<EOF >>/etc/dnsmasq.conf
