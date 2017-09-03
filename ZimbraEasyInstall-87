@@ -201,7 +201,7 @@ y
 EOF
 if [[ `lsb_release -rs` == "16.04" ]]; then
     echo "Downloading Zimbra Collaboration 8.7.11 for Ubuntu 16.04"
-    wget https://files.zimbra.com/downloads/8.7.11_GA/zcs-8.7.11_GA_1854.UBUNTU16_64.20170531151956.tgz
+    wget -nv -c https://files.zimbra.com/downloads/8.7.11_GA/zcs-8.7.11_GA_1854.UBUNTU16_64.20170531151956.tgz
     tar xzvf zcs-*
     echo "Installing Zimbra Collaboration just the Software"
     cd /tmp/zcs/zcs-* && ./install.sh -s < /tmp/zcs/installZimbra-keystrokes
@@ -214,7 +214,7 @@ if [[ `lsb_release -rs` == "16.04" ]]; then
 fi
 if [[ `lsb_release -rs` == "14.04" ]]; then
     echo "Downloading Zimbra Collaboration 8.7.11 for Ubuntu 14.04"
-    wget https://files.zimbra.com/downloads/8.7.11_GA/zcs-8.7.11_GA_1854.UBUNTU14_64.20170531151956.tgz
+    wget -nv -c https://files.zimbra.com/downloads/8.7.11_GA/zcs-8.7.11_GA_1854.UBUNTU14_64.20170531151956.tgz
     tar xzvf zcs-*
     echo "Installing Zimbra Collaboration just the Software"
     cd /tmp/zcs/zcs-* && ./install.sh -s < /tmp/zcs/installZimbra-keystrokes
